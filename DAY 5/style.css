@@ -1,0 +1,274 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #160430;
+    color: white;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.left, .right {
+    width: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left {
+    background: url('assets/rightimg.jpg') center no-repeat;
+    background-size: cover;
+}
+
+.left::before, .right .bubbles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.left::before {
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 2;
+}
+
+.bubble, .bubble-right {
+    position: absolute;
+    bottom: -50px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    animation: rise 6s infinite ease-in-out;
+}
+
+.bubble-right {
+    animation: rise-right 10s infinite ease-in-out;
+}
+
+.bubble:nth-child(1), .bubble-right:nth-child(1) {
+    width: 80px;
+    height: 80px;
+    animation-duration: 12s;
+}
+
+.bubble:nth-child(2), .bubble-right:nth-child(2) {
+    width: 100px;
+    height: 100px;
+    animation-duration: 8s;
+}
+
+.bubble:nth-child(3), .bubble-right:nth-child(3) {
+    width: 60px;
+    height: 60px;
+    animation-duration: 14s;
+}
+
+.bubble:nth-child(4), .bubble-right:nth-child(4) {
+    width: 120px;
+    height: 120px;
+    animation-duration: 10s;
+}
+
+.bubble:nth-child(5), .bubble-right:nth-child(5) {
+    width: 50px;
+    height: 50px;
+    animation-duration: 18s;
+}
+
+@keyframes rise {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-100vh); }
+}
+
+@keyframes rise-right {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-100vh); }
+}
+
+.welcome-text {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 3;
+    text-align: left;
+}
+
+.welcome-text h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.welcome-text span {
+    color: #826EFF;
+}
+
+.right {
+    background-color: #160430;
+    padding: 20px;
+}
+
+.form-container {
+    width: 80%;
+    text-align: left;
+    z-index: 2;
+}
+
+.form-container h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.form-container p {
+    margin-bottom: 20px;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 15px 15px 15px 45px;
+    border-radius: 5px;
+    border: none;
+    font-size: 1rem;
+    background-color: #26103A;
+    color: white;
+    outline: none;
+}
+
+.input-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.btn {
+    background: linear-gradient(to right, #826EFF, #4CC6FF);
+    padding: 15px;
+    border: none;
+    color: white;
+    border-radius: 30px;
+    width: 100%;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 20px;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+.divider {
+    border: 0;
+    height: 1px;
+    background: lightgray;
+    margin: 20px 0;
+}
+
+.social-login {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.social-login button {
+    padding: 10px 20px;
+    background: none;
+    border: 1px solid white;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 45%;
+}
+
+.social-login button:hover {
+    opacity: 0.9;
+}
+
+.form-container a {
+    color: #826EFF;
+    text-decoration: none;
+}
+
+.form-container a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 1200px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .left, .right {
+        width: 100%;
+        height: 50vh;
+    }
+
+    .form-container {
+        width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    .welcome-text h1 {
+        font-size: 2rem;
+    }
+
+    .form-container h2 {
+        font-size: 2rem;
+    }
+
+    .btn, .social-login button {
+        font-size: 0.9rem;
+    }
+
+    .input-group input {
+        padding: 10px;
+    }
+
+    .input-icon {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .left {
+        display: none;
+    }
+
+    .right, .form-container {
+        width: 100%;
+    }
+
+    .input-icon {
+        display: none;
+    }
+}

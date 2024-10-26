@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+</head>
+<body>
+    <div class="container">
+
+        <div class="image-box">
+            <img src="assets/illustration.png" alt="illustration" class="illustration-img">
+        </div>
+
+        <div class="login-box">
+            <div class="logo">
+                <img src="assets/logo.png" alt="Logo" class="logo-img">
+                <p>Log into your account</p>
+            </div>
+
+            <form>
+                <label for="email">Email Address</label>
+                <div class="input-group">
+                    <input type="email" id="email" placeholder="alex@gmail.com" required>
+                    <i class="fas fa-envelop"></i>
+                </div>
+
+                <label for="password">Password</label>
+                <div class="input-group">
+                    <input type="password" id="password" placeholder="Enter Your Password" required>
+                    <i class="fas fa-lock"></i>
+                </div>
+
+                <div class="actions">
+                    <a href="#" class="forgot-password">Forgot Password</a>
+                    <button class="btn-login" type="submit">Login Now</button>
+                </div>
+
+                <div class="divider">OR</div>
+            </form>
+
+            <div class="signup">
+                <a href="#">
+                    <button class="btn-signup">
+                        Signup Now
+                    </button>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

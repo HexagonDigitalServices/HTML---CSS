@@ -1,0 +1,247 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #064c42;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1200px;
+    height: 90vh;
+    border-radius: 20px;
+    position: relative;
+    margin: 10px;
+    padding: 20px;
+}
+
+.login-box {
+    width: 40%;
+    max-width: 320px;
+    height: 80%;
+    padding: 20px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 15px;
+    box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+    backdrop-filter: blur(10px);
+    z-index: 2;
+    margin: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s forwards; 
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.avatar img {
+    width: 200px;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 50%;
+}
+
+.welcome {
+    font-size: 2rem;
+    text-align: center;
+    font-family: 'Cinzel',serif;
+    margin-bottom: 30px;
+}
+
+.input-group {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 2px solid rgba(247,247,247);
+    background: rgba(255,255,255,0.934);
+    color: white;
+    transition: border-color 0.3s ease, transorm 0.2s ease;
+}
+
+.input-group input:focus {
+    border-color: #f4b500;
+    outline: none;
+    transform: scale(1.02);
+}
+
+.forgot-password {
+    color: #faf6f6;
+    text-decoration: none;
+    margin-bottom: 500px;
+    align-self: flex-end;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #f4b500;
+    color: white;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.login-btn:hover {
+    background-color: #f49e00;
+    transform: scale(1.05);
+}
+
+.side-image {
+    width: 50%;
+    position: relative;
+}
+
+.chandelier {
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-270%);
+    width: 100px;
+    height: auto;
+    z-index: 3;
+    animation: pendulumSwing 2s ease-in-out infinite;
+}
+
+.chandelier::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: rgba(255,223,186,0.5);
+    box-shadow: 0 0 50px rgba(255,223,186,0.8);
+    opacity: 0;
+    animation: lightPulse 2s ease-in-out infinite;
+}
+
+@keyframes lightPulse {
+    0%,100% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.8;
+        transform: scale(1.1)
+    }
+}
+
+@keyframes pendulumSwing {
+    0% {
+        transform: translateX(-270%) rotate(15deg);
+    }
+    50% {
+        transform: translateX(-270%) rotate(-15deg);
+    }
+    100% {
+        transform: translateX(-270%) rotate(15deg)
+    }
+}
+
+.yellow-background {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 130%;
+    height: 600px;
+    z-index: 1;
+}
+
+.sitting-person {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 230px;
+    height: auto;
+    z-index: 2;
+    animation: moveDiagonal 6s linear infinite;
+}
+
+@keyframes moveDiagonal {
+    0% {
+        transform: translate(0, 0);
+    }
+    100%{
+        transform: translate(calc(70vh + 12px), calc(-30vw + 12px));
+    }
+}
+
+@media (max-width:768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+    }
+
+    .login-box {
+        width: 80%;
+        margin: 20px auto;
+    }
+
+    .side-image {
+        width: 100%;
+        display: none;
+    }
+}
+
+@media (max-width:480px) {
+    .login-box{
+        width: 100%;
+        height: auto;
+        padding: 20px;
+    }
+
+    .avatar img {
+        width: 100px;
+    }
+
+    .welcome {
+        font-size: 1.5rem;
+    }
+
+    .input-group input {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+    .login-btn {
+        font-size: 1rem;
+        padding: 10px;
+    }
+    .forgot-password {
+        font-size: 0.8rem;
+    }
+
+    .side-image {
+        display: none;
+    }
+}
