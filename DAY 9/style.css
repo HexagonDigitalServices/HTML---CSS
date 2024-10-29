@@ -1,0 +1,206 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #f0d7e4, #b4c6ef);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.pricing-container {
+    text-align: center;
+    color: #333;
+    max-width: 1000px;
+    padding: 20px;
+    margin: 20px auto;
+}
+
+h1 {
+    font-size: 2rem;
+    color: #2f266e;
+    margin-bottom: 15px;
+}
+
+p {
+    color: #666;
+    margin-bottom: 30px;
+    font-size: 1rem;
+}
+
+.toggle-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.toggle-label {
+    font-weight: bold;
+    color: #9b87ff;
+    font-size: 1rem;
+}
+
+.toggle {
+    background: #e5e5e5;
+    border-radius: 15px;
+    width: 100px;
+    height: 30px;
+    margin: 0 10px;
+    position: relative;
+    cursor: pointer;
+}
+
+.toggle-circle {
+    background: #9b87ff;
+    width: 45px;
+    height: 26px;
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    transition: left 0.3s ease;
+}
+
+.toggle-checkbox {
+    display: none;
+}
+
+.toggle-checkbox:checked+.toggle .toggle-circle {
+    left: 53px;
+}
+
+.yearly-price {
+    display: none;
+}
+
+.toggle-checkbox:checked~.pricing-cards .card .price .monthly-price {
+    display: none;
+}
+
+.toggle-checkbox:checked~.pricing-cards .card .price .yearly-price {
+    display: inline;
+}
+
+.pricing-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.card {
+    background: #f5f5f5;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 400px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.popular {
+    background: #2f266e;
+    color: #fff;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.badge {
+    position: absolute;
+    top: -10px;
+    right: 20px;
+    background: #9b87ff;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.75rem;
+}
+
+.price {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #2f266e;
+    white-space: nowrap;
+    overflow-wrap: break-word;
+}
+
+.popular .price {
+    color: #ffffff;
+}
+
+h3 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #2f266e;
+    overflow-wrap: break-word;
+}
+
+.popular h3 {
+    color: #ffffff;
+}
+
+ul {
+    list-style: none;
+    margin: 15px 0;
+    font-size: 1rem;
+    color: #666;
+    padding-left: 0;
+}
+
+ul li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: #6a5dff;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.2s;
+    margin-top: auto;
+}
+
+button:hover {
+    background: #5646d8;
+    transform: scale(1.05);
+}
+
+.popular button {
+    background: #9b87ff;
+}
+
+.popular button:hover {
+    background: #7e6bd3;
+}
+
+@media (min-width:768px) {
+    .pricing-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width:1024px) {
+    .pricing-cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
