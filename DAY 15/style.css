@@ -1,0 +1,277 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f7f9;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    width: 90%;
+    max-width: 900px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slide-in 0.5s forwards ease;
+    overflow-y: auto;
+    max-height: 90vh; 
+}
+
+@keyframes slide-in {
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.left-panel {
+    position: relative;
+    flex: 1;
+    background-color: #4ae3ee;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.logo {
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    width: 80px;
+    height: auto;
+}
+
+.left-panel h2 {
+    color: white;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.left-panel .graphics img {
+    height: auto;
+    width: 80%;
+    max-width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+}
+
+.right-panel {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.form-container {
+    width: 100%;
+    max-width: 320px;
+    text-align: center;
+}
+
+.form-container h1 {
+    font-size: 24px;
+    color: black;
+    margin-bottom: 20px;
+}
+
+.social-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.social-login {
+    padding: 10px;
+    flex: 1;
+    font-size: 16px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.social-login:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.2);
+}
+
+.social-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.google {
+    background-color: #fff;
+    border: 1px solid hsla(0,0%,80%,0.918);
+    color: #333;
+}
+
+.facebook {
+    background-color: white;
+    border: 1px solid hsla(0,0%,80%,0.918);
+    color: #1b1a1a;
+}
+
+.separator {
+    margin: 15px 0;
+    color: #888;
+    font-weight: bold;
+}
+
+form {
+    width: 100%;
+}
+
+form input {
+    width: 100%;
+    padding: 8px;
+    margin: 10px 0;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    font-size: 16px;
+    transition: border-color 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fade-in-up 0.5s forwards ease;
+}
+
+@keyframes fade-in-up {
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+form input:focus {
+    border-bottom: 1px solid #4ae3ee;
+    outline: none;
+}
+
+.create-account {
+    width: 100%;
+    padding: 10px;
+    background-color: #4ae3ee;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.create-account:hover {
+    background-color: #39c8d3;
+    transform: translateY(-2px);
+}
+
+.login-link {
+    margin-top: 10px;
+    color: #666;
+}
+
+.login-link a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+.login-link a:hover {
+    color: #388e3c;
+}
+
+@media (max-width:768px) {
+    .container {
+        flex-direction: row;
+        align-items: stretch;
+    }
+
+    .left-panel {
+        padding: 30px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .left-panel h2 {
+        font-size: 20px;
+    }
+
+    .right-panel {
+        padding: 20px;
+    }
+
+    .social-login {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
+
+@media (max-width:480px) {
+    .container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .left-panel h2 {
+        font-size: 18px;
+    }
+
+    .left-panel .graphics img {
+        width: 60%;
+    }
+
+    .form-container h1 {
+        font-size: 20px;
+    }
+
+    .social-login {
+        font-size: 12px;
+        padding: 6px;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .facebook,
+    .google {
+        font-size: 12px;
+        padding: 6px 4px;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+    }
+
+    .social-icon {
+        width: 16px;
+        height: 16px;
+    }
+
+    form input {
+        font-size: 14px;
+    }
+
+    .create-account {
+        font-size: 14px;
+    }
+}

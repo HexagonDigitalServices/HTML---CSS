@@ -1,0 +1,233 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #ede7f6;
+}
+
+.container {
+    display: flex;
+    max-width: 1000px;
+    background-color: #f3e8fc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    width: 90%;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.form-container {
+    flex: 1;
+    padding: 40px;
+}
+
+.form-container h2 {
+    font-size: 24px;
+    color: #a255cc;
+    margin-bottom: 10px;
+}
+
+.form-container p {
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #d8a3f5;
+    border-radius: 5px;
+    outline: none;
+}
+
+.form-group textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #d08fe8;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #b973c5;
+}
+
+.image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    background-color: #f3e8fc;
+    padding: 20px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.image-container img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    animation: bounceIn 1s ease-in-out;
+}
+
+.contact-info {
+    margin-top: 20px;
+    color: #555;
+    text-align: center;
+}
+
+.contact-info p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+    color: #a255cc;
+    font-size: 16px;
+    animation: fadeInUp 1.5s ease;
+}
+
+.icon {
+    margin-right: 8px;
+    animation: bounce 1s infinite alternate;
+}
+
+@keyframes bounceIn {
+    from {
+        opacity: 0;
+        transform: scale(1);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.05);
+    }
+}
+
+@media (max-width:1024px) {
+    .container {
+        flex-direction: row-reverse;
+    }
+
+    .image-container {
+        padding: 15px;
+    }
+
+    .image-container img {
+        max-width: 300px;
+    }
+}
+
+@media (max-width:768px) {
+    .container {
+        flex-direction: column-reverse;
+    }
+
+    .form-container {
+        padding: 20px;
+    }
+
+    .image-container img {
+        max-width: 280px;
+    }
+}
+
+@media (max-width:480px) {
+    .form-container h2 {
+        font-size: 20px;
+    }
+
+    .form-container p,
+    .contact-info p {
+        font-size: 14px;
+    }
+
+    button {
+        padding: 8px;
+    }
+
+    .image-container img {
+        max-width: 250px;
+    }
+}
+
+@media (max-width:375px) {
+    .form-container h2 {
+        font-size: 18px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 8px;
+    }
+
+    button {
+        padding: 6px;
+        font-size: 14px;
+    }
+
+    .contact-info p {
+        font-size: 12px;
+    }
+}

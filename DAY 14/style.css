@@ -1,0 +1,136 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    overflow: hidden;
+    background-color: #2a003e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.carousel-container {
+    width: 80%;
+    height: 150px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.carousel-track {
+    display: flex;
+    animation: scroll 15s linear infinite;
+}
+
+.carousel-item {
+    flex-shrink: 0;
+    margin: 0 10px;
+}
+
+.carousel-item img {
+    width: 120px;
+    height: auto;
+}
+
+.gradient-mask {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 20%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.gradient-mask.left-0 {
+    left: 0;
+    background: linear-gradient(to right, #2a003e, transparent);
+}
+
+.gradient-mask.right-0 {
+    right: 0;
+    background: linear-gradient(to left, #2a003e, transparent);
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-50%);
+    }
+}
+
+.bubble-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.bubble {
+    position: absolute;
+    bottom: -50px;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    animation: rise 10s infinite ease-in-out;
+    opacity: 0.5;
+}
+
+.bubble:nth-child(1) {
+    left: 10%;
+    animation-duration: 12s;
+    animation-delay: 0s;
+}
+
+.bubble:nth-child(2) {
+    left: 25%;
+    width: 60px;
+    height: 60px;
+    animation-duration: 10s;
+    animation-delay: 3s;
+}
+
+.bubble:nth-child(3) {
+    left: 40%;
+    animation-duration: 14s;
+    animation-delay: 6s;
+}
+
+.bubble:nth-child(4) {
+    left: 70%;
+    width: 80px;
+    height: 80px;
+    animation-duration: 8s;
+    animation-delay: 1s;
+}
+
+.bubble:nth-child(5) {
+    left: 85%;
+    animation-duration: 16s;
+    animation-delay: 5s;
+}
+
+@keyframes rise {
+    0%{
+        bottom: -50px;
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 0.8;
+    }
+    100% {
+        bottom: 110%;
+        opacity: 0;
+    }
+}
