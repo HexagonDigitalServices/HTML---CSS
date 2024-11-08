@@ -1,0 +1,190 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #38b2ac;
+    font-family: Arial,sans-serif;
+    overflow: hidden;
+}
+
+.floating-numbers-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.floating-number, .floating-symbol {
+    position: absolute;
+    font-weight: bold;
+    animation: float 8s infinite linear;
+}
+
+.floating-number {
+    font-size: 12em;
+    color: wheat;
+}
+
+.floating-symbol {
+    font-size: 20em;
+    animation-duration: 10s;
+    color: black;
+}
+
+@keyframes float {
+    0%{
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.floating-number:nth-child(1) { left: 10%; animation-delay: 0s; }
+.floating-number:nth-child(2) { left: 20%; animation-delay: 1s; }
+.floating-number:nth-child(3) { left: 30%; animation-delay: 2s; }
+.floating-number:nth-child(4) { left: 40%; animation-delay: 3s; }
+.floating-number:nth-child(5) { left: 50%; animation-delay: 4s; }
+.floating-number:nth-child(6) { left: 60%; animation-delay: 5s; }
+.floating-number:nth-child(7) { left: 70%; animation-delay: 6s; }
+.floating-number:nth-child(8) { left: 80%; animation-delay: 7s; }
+.floating-number:nth-child(9) { left: 90%; animation-delay: 8s; }
+.floating-symbol:nth-child(10) { left: 15%; animation-delay: 1s; }
+.floating-symbol:nth-child(11) { left: 35%; animation-delay: 3s; }
+.floating-symbol:nth-child(12) { left: 55%; animation-delay: 4s; }
+.floating-symbol:nth-child(13) { left: 75%; animation-delay: 7s; }
+
+.calculator {
+    width: 100%;
+    max-width: 500px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgb(5,148,100);
+    position: relative;
+    z-index: 1;
+    backdrop-filter: blur(10px);
+}
+
+.display {
+    background-color: #282b2a;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    position: relative;
+}
+
+.display .icon {
+    color: #0ff6d7;
+    font-size: 1.5em;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+}
+
+.input-display {
+    color: #81e6d9;
+    font-size: 1.2em;
+    opacity: 0.8;
+    text-align: right;
+    width: 100%;
+    margin-bottom: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#result {
+    font-size: 1.5em;
+    width: 100%;
+    background: none;
+    border: none;
+    color: white;
+    text-align: right;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    padding: 20px;
+}
+
+button {
+    font-size: 1.2em;
+    padding: 15px;
+    background: linear-gradient(135deg, #63b3ed, #2fe7e4);
+    border: none;
+    border-radius: 12px;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.1s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+button:active {
+    transform: scale(0.95);
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+}
+
+.action-btn {
+    background: linear-gradient(135deg, #0a0101, #f56565);
+}
+
+.operator {
+    background: linear-gradient(135deg,#10f2ea, #0578f3);
+}
+
+.equal-btn {
+    background: linear-gradient(135deg, #1be2b7, #3fefec);
+}
+
+.equal-btn:hover {
+    background: linear-gradient(135deg, #9af2f0, #2c7a7b);
+}
+
+.zero {
+    grid-column: span 2;
+}
+
+@media (max-width:768px) {
+    .floating-number{font-size: 6rem;}
+    .floating-symbol {font-size: 12em;}
+    .calculator {max-width: 300px;}
+    .buttons {gap: 10px; padding: 15px;}
+    button {font-size: 1em; padding: 10px;}
+    .display .icon {font-size: 1.2em;}
+    #result {font-size: 1.2em;}
+}
+
+@media (max-width:480px) {
+    .floating-number{font-size: 5rem;}
+    .floating-symbol {font-size: 7em;}
+    .calculator {max-width: 90%;}
+    .buttons {gap: 8px;}
+    button {font-size: 0.9em; padding: 8px;}
+    .display{padding: 10px;}
+    .display .icon {font-size: 1em;}
+    #result {font-size: 1em;}
+}
