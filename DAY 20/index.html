@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Zone</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="left-content">
+            <h1>Food Zone</h1>
+            <p id="description">Explore delicious recipes and mouth-watering dishes.</p>
+            <button class="order-btn">$20 - ORDER NOW</button>
+        </div>
+
+        <div class="main-image">
+            <img src="assets/images1.png" id="displayedImage" class="slide-image" alt="Main Food Image">
+        </div>
+
+        <div class="right-list">
+
+            <div class="list-item active"
+                onclick="changeImage('assets/images1.png', 'Delicious berries - Fresh and vibrant!')">
+                <img src="assets/images1.png" alt="Thumbnail 1">
+                <div>
+                    <p>Delicious berries</p>
+                    <span>Fresh and vibrant</span>
+                </div>
+            </div>
+
+            <div class="list-item"
+                onclick="changeImage('assets/images2.png', 'Sweet dessert - A treat for your taste buds!')">
+                <img src="assets/images2.png" alt="Thumbnail 2">
+                <div>
+                    <p>Sweet dessert</p>
+                    <span>A treat for your taste buds!</span>
+                </div>
+            </div>
+
+            <div class="list-item"
+                onclick="changeImage('assets/images3.png', 'Healthy smoothie - Packed with nutrients!')">
+                <img src="assets/images3.png" alt="Thumbnail 3">
+                <div>
+                    <p>Healthy smoothie</p>
+                    <span>Packed with nutrients!</span>
+                </div>
+            </div>
+
+            <div class="list-item"
+                onclick="changeImage('assets/images4.png', 'Exotic flavors - Unique taste experience!')">
+                <img src="assets/images4.png" alt="Thumbnail 4">
+                <div>
+                    <p>Exotic flavors</p>
+                    <p>Unique taste experience</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
