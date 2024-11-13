@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Launch Countdown</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+  <header class="hdr">
+    <div class="logo"><i class="fas fa-rocket"></i> Launchify</div>
+    <div class="auth-btns">
+      <button class="btn login">Log in</button>
+      <button class="btn signup">Sign up</button>
+    </div>
+  </header>
+
+  <main class="cnt">
+    <div class="bg-circle"></div>
+    <div class="anim-bg">
+      <div class="circle sm"></div>
+      <div class="circle md"></div>
+      <div class="circle lg"></div>
+      <div class="circle xl"></div>
+    </div>
+
+    <h1>We are launching in</h1>
+    <p class="subtext">A social betting network where you can follow tipsters, 
+      share, and copy bets from our community & friends.
+    </p>
+
+    <div class="countdown">
+
+      <div class="time-box">
+        <span id="days">00</span>
+        <span>Days</span>
+      </div>
+
+      <div class="time-box">
+        <span id="hours">00</span>
+        <span>Hours</span>
+      </div>
+
+      <div class="time-box">
+        <span id="minutes">00</span>
+        <span>Minutes</span>
+      </div>
+
+      <div class="time-box">
+        <span id="seconds">00</span>
+        <span>Seconds</span>
+      </div>
+
+    </div>
+
+    <div class="subscribe">
+      <input type="email" placeholder="Your email..." />
+      <button class="btn sub-btn">Sign up</button>
+    </div>
+  </main>
+
+  <canvas id="confetti-canvas"></canvas>
+  <div id="popup" class="popup hidden">
+    <h2>Launch Time!</h2>
+    <p>Thank you for waiting. We are now live!</p>
+    <button class="btn close-btn" onclick="closePopup()">Close</button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/confetti-js@0.0.18/dist/index.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

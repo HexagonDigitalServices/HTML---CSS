@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>BMI CALCULATOR</h1>
+        <div class="input-section">
+            <!-- Age input -->
+            <div class="input-group">
+                <label>Age</label>
+                <button class="custom-button" onclick="decrement('age')">-</button>
+                <span id="age">30</span>
+                <button class="custom-button" onclick="increment('age')">+</button>
+            </div>
+            <!-- Weight input -->
+            <div class="input-group">
+                <label>Weight (KG)</label>
+                <button class="custom-button" onclick="decrement('weight')">-</button>
+                <span id="weight">78</span>
+                <button class="custom-button" onclick="increment('weight')">+</button>
+            </div>
+            <!-- Height input -->
+            <div class="input-group">
+                <label>Height (CM)</label>
+                <input type="range" id="height" min="50" max="300" value="175" oninput="updateHeight(this.value)">
+                <span id="height-value">175</span> cm
+            </div>
+            <!-- Gender selection with two toggle buttons -->
+            <div class="input-group">
+                <label>Gender</label>
+                <div class="gender-buttons">
+                    <button id="male-btn" class="button gender-btn" onclick="selectGender('Male')">Male</button>
+                    <button id="female-btn" class="button gender-btn" onclick="selectGender('Female')">Female</button>
+                </div>
+            </div>
+        </div>
+        <!-- Calculate BMI button -->
+        <button class="button calculate-bmi" onclick="calculateBMI()">Calculate BMI</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

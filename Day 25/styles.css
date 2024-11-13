@@ -1,0 +1,298 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #f7f9fc;
+  color: #333;
+  overflow: hidden;
+  position: relative;
+}
+
+.hdr {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.auth-btns .btn {
+  background: none;
+  border: 2px solid #00c853;
+  color: #333;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 8px 15px;
+  border-radius: 5px;
+  margin-left: 10px;
+  transition: 0.3s;
+}
+
+.btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.signup {
+  background-color: #00c853;
+  color: #fff;
+}
+
+.login {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.btn:hover {
+  background-color: #00c853;
+  color: #fff;
+}
+
+.cnt {
+  text-align: center;
+  padding: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 80px;
+}
+
+.bg-circle {
+  position: absolute;
+  top: -150px;
+  right: -100px;
+  width: 800px;
+  height: 800px;
+  background: linear-gradient(130deg, #a6e3e9, #c5f0dc);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.anim-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -2;
+}
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(0, 200, 83, 0.3);
+  animation: float 10s infinite ease-in-out alternate;
+}
+
+.sm {
+  width: 80px;
+  height: 80px;
+  top: 20%;
+  left: 10%;
+}
+
+.md {
+  width: 120px;
+  height: 120px;
+  top: 40%;
+  left: 70%;
+}
+
+.lg {
+  width: 200px;
+  height: 200px;
+  top: 60%;
+  left: 20%;
+}
+
+.xl {
+  width: 300px;
+  height: 300px;
+  top: 70%;
+  left: 50%;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+    opacity: 0.7;
+  }
+
+  100% {
+    transform: translateY(-20px);
+    opacity: 0.5;
+  }
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.subtext {
+  color: #555;
+  margin-bottom: 20px;
+  font-size: 1em;
+  padding: 0 15px;
+}
+
+.countdown {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.time-box {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 15px 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  min-width: 80px;
+  transition: transform 0.3s;
+}
+
+.time-box span:first-child {
+  display: block;
+  font-size: 1.8em;
+  color: #00c853;
+}
+
+.subscribe {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.subscribe input {
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 30px;
+  width: 280px;
+  font-size: 1em;
+  outline: none;
+  background-color: #f0f0f0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
+
+.subscribe input:focus {
+  border-color: #00c853;
+  background-color: #e9ffe8;
+}
+
+.subscribe input::placeholder {
+  color: #888;
+  font-style: italic;
+}
+
+.subscribe .btn {
+  padding: 12px 25px;
+  background: linear-gradient(90deg, #00c853, #76ff03);
+  border: none;
+  border-radius: 30px;
+  color: #fff;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 200, 83, 0.3);
+  transition: 0.3s;
+}
+
+.subscribe .btn:hover {
+  background: linear-gradient(90deg, #76ff03, #00c853);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 200, 83, 0.5);
+}
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .hdr {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 15px;
+  }
+
+  .auth-btns {
+    margin-top: 10px;
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .btn {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+  }
+
+  .logo {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 1rem;
+  }
+
+  .btn {
+    font-size: 0.8rem;
+    padding: 5px 10px;
+  }
+
+  .auth-btns {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+}
